@@ -1,4 +1,4 @@
-Quick fix by Jordan of [this repository](https://github.com/jhasuman/potholes-detection/), as described by [an issue opened by Jordan on same repository](https://github.com/jhasuman/potholes-detection/issues/6).
+Quick fix by Jordan of [this repository](https://github.com/jhasuman/potholes-detection/) by [Suman Kumar Jha](https://github.com/jhasuman), as described by [an issue opened by Jordan on same repository](https://github.com/jhasuman/potholes-detection/issues/6).
 
 Steps taken to fix issues:
 
