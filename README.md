@@ -1,17 +1,17 @@
-# potholes-detection
-This is a deep learning model for detecting the potholes on roads. The model is using YOLO-v2. 
+Quick fix by Jordan of [this repository](https://github.com/jhasuman/potholes-detection/), as descrirbed by [an issue opened by Jordan on same repository](https://github.com/jhasuman/potholes-detection/issues/6).
 
-Download the weights from this link : https://drive.google.com/open?id=1VwViHDdc4W8t28rMiuGjxChiAtFxMAjN
-and place the weights in the root folder. 
+Steps taken to fix issues:
 
-Then
-`python predict.py -c config.json -w /path/to/best_weights.h5 -i /path/to/image/or/video`
+1. Modified [config.json](https://github.com/JordanMicahBennett/potholes-detection/blob/master/config.json), to include "backend":"Full Yolo" in model object. (This was missing from [the original config.json in main repository](https://github.com/jhasuman/potholes-detection/blob/master/config.json), and lead to a run-time error.)
 
-The model has been trained with 150 images having 568 potholes labels. The accuracy of the model will increase by traing the model with larger size dataset. 
+2. To remove **_full_yolo_backend_** error that appeared at run time out of the box, I downloaded [full_yolo_backend.h5 from another repository](https://github.com/rodrigo2019/keras_yolo2/releases/tag/pre-trained-weights) to directory of this downloaded repository.
 
-## Image
+3. Successfully ran code on [this random pic with potholes that I took from google](https://d1ix0byejyn2u7.cloudfront.net/drive/images/uploads/headers/ws_cropper/1_0x0_1410x520_0x520_potholes.jpg).
 
-![Road with potholes](images/1.jpg?raw=true "Road with Potholes")
+Test data from [said random pic with potholes](https://d1ix0byejyn2u7.cloudfront.net/drive/images/uploads/headers/ws_cropper/1_0x0_1410x520_0x520_potholes.jpg):
 
-## Detected potholes
-![Road with potholes detected](images/1_detected.jpg?raw=true "Road with Potholes Detected")
+Input: 
+![image](https://user-images.githubusercontent.com/3666405/61832223-0eb94280-ae36-11e9-97f5-c0f52377cfaf.png)
+
+Result:
+![image](https://user-images.githubusercontent.com/3666405/61832244-2264a900-ae36-11e9-8b0a-7ef6e2fcf35e.png)
